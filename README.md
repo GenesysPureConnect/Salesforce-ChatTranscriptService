@@ -1,2 +1,3 @@
-Salesforce-ChatTranscriptService
-================================
+This webservice is an example of how to attach a chat transcript to an activity in Salesforce.  Chat logs have to be uploaded as attachments because Salesforce has a size limit of 255 characters for text fields.  The UploadChatTranscript handler can be called from ObjectDisconnectMonitor and will send the call id and the recording id to the c# web service.  The web service will lookup the associated Task, download the transcript from recorder and attach it to the Task.
+
+The UploadChatTranscript handler needs to be modified slightly.  The SOAP Http Request Ex toolstep will need to change to point to the url where this web service is hosted. 
